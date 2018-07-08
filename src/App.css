@@ -28,15 +28,29 @@
 }
 
 .headers-list {
-  text-align: left; }
+  text-align: left;
+    background: #000;
+}
 
 .headers-list__single {
   display: inline-block;
-  vertical-align: center;
-  padding: 10px 15px;
-  background: #000;
-  margin: 5px 5px 5px 0px;
-  color: #fff; }
+    vertical-align: center;
+    padding: 10px 15px;
+    background: #000;
+    margin: 5px 5px 5px 0px;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .headers-list__blue {
+     display: inline-block;
+     vertical-align: center;
+     padding: 10px 15px;
+     background: #000;
+     margin: 5px 5px 5px 0px;
+     color: #2196f3;
+     text-decoration: none;
+   }
 
 .splash-img{
 
@@ -44,4 +58,144 @@
 
 .midbody{
   text-align: left;
+}
+.splash-img{
+  background: url(./images/landing-splash-bg.png) no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 80px;
+  color: white;
+}
+
+.seating-img{
+  background: url(./images/category-seating.png) no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 80px;
+  color: white;
+}
+
+.tables-img{
+  background: url(./images/category-tables.png) no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 80px;
+  color: white;
+}
+
+.desks-img{
+  background: url(./images/category-desks.png) no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 80px;
+  color: white;
+}
+
+.storage-img{
+  background: url(./images/category-storage.png) no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 80px;
+  color: white;
+}
+
+.titulo{
+  font-size: 50px;
+}
+
+.titulo1{
+  font-size: 40px;
+  margin-bottom: 0;
+}
+
+.forniList {
+  display: flex;
+
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.product-id {
+  width: 30%;
+  border-color: #999999;
+  border-style:solid;
+  border-width: thin;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+}
+
+.product-id img{
+  width: 1000%;
+}
+
+.product-id h3{
+  font-size: 17px;
+  width: 100%;
+}
+
+.product-id p{
+  color: #999999;
+  font-weight: bold;
+}
+
+.btn-cat-link{
+  border: dodgerblue 1px solid;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: dodgerblue;
+  margin: 12px;
+}
+
+.footer{
+  font-family: 'Source Sans Pro',sans-serif;
+  font-size: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+  justify-content: space-around;
+}
+
+.footer img{
+  display:flex;
+  width: 100%;
+  padding: 320px;
+  padding-top:30px;
+  padding-bottom:30px;
+}
+
+.footer h3{
+  margin-left: 40px;
+  color: #F44336;
+  margin-left: auto;
+}
+
+.company-footer a {
+  display: flex;
+  width: 33%;
+  margin-left: 0;
+  padding:5px;
+  text-decoration: none;
+}
+
+.categories-footer a{
+  display: flex;
+  width: 33%;
+  padding:5px;
+  text-decoration: none;
+  margin-left: 0;
+}
+
+.social-footer {
+  padding:5px;
+  text-decoration: none;
+  margin-left: 0;
+}
+
+.social-footer i{
+  padding: 5px;
+  font-size: 20px;
+  color: #000000;
 }

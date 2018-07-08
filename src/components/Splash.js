@@ -1,23 +1,21 @@
-import React, { Component } from 'react'
-import logoImg from '../images/landing-splash-bg.png'
+import React, { Component } from 'react';
+import logoImg from '../images/landing-splash-bg.png';
 
 class Splash extends Component {
 
   render() {
+    return (
+      <div className="splash-img">
+        {/*<img src={logoImg} Alt="">*/}
 
-    return(
-      <section>
-        {/*<h4>Splash</h4>*/}
-        <div className="splash-img">
-          <img src={logoImg} alt=""/>
-          <p>Mallory Furniture</p>
-          <p>Your Furniture is Old</p>
-          <p>Ours is Older</p>
-        </div>
-      </section>
+        <p className="titulo">Mallory Furniture</p>
+        <h2>Your Furniture is Old</h2>
+        <h2>Ours is Older</h2>
+      </div>
+
+
     );
   }
 }
 
-
-export default Splash;
+export default Splash
