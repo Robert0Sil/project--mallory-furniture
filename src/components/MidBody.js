@@ -3,8 +3,8 @@ import request from 'superagent';
 import ProductId from './ProductId';
 //import { Headers } from '../data/datasource';
 //import { Link } from 'react-router-dom';
-
-//import DownBody from './DownBody';
+import logoImg from '../images/mf-logo-black.svg'
+import Footer from './Footer';
 
 
 class MidBody extends Component {
@@ -18,14 +18,14 @@ class MidBody extends Component {
 
   _fetchFurniData(componentProps){
     let apiReqUrl='https://mallory-furniture-admin.now.sh/api/v1/products'
-    {/*let allProInRoute = componentProps.match.gen*/}
-    let featProInRoute = 'featured'
+
+    let genderInRoute = componentProps.match.params.ProId
 
     if(typeof allProInRoute !== 'undefined'){
       apiReqUrl = `https://mallory-furniture-admin.now.sh/api/v1/all-products`
     }
 
-    if(typeof featProInRoute !== 'undefined'){
+    if(typeof genderInRoute !== 'undefined'){
       const genObj = {
         S: 'seating',
         T: 'tables',
@@ -34,9 +34,9 @@ class MidBody extends Component {
         B: 'bedroom',
         M: 'misc'
       }
-      apiReqUrl = `https://mallory-furniture-admin.now.sh/api/v1/products?category=${genObj[featProInRoute]}`
+      apiReqUrl = `https://mallory-furniture-admin.now.sh/api/v1/products?category=${genObj[genderInRoute]}`
     }
-    {/*let cgenObj = genObj[featProInRoute] + "-img"*/}
+
 
     console.log(apiReqUrl);
 
@@ -92,10 +92,11 @@ class MidBody extends Component {
            />
       })
 
-      let featCompLis = featCompList.slice(0,9)
+      {/*let featCompLis = featCompList.slice(0,9)*/}
 
-      return featCompLis
+      return featCompList
    }
+
 
  render(){
 
@@ -103,21 +104,25 @@ class MidBody extends Component {
      <section>
 
         <div className="storage-img">
-          <p className="titulo">Mallory Furniture</p>
+          <p className="titulo2">Mallory Furniture</p>
           <h2>Your Furniture is Old</h2>
           <h2>Ours is Older</h2>
-       {/*<h3>in route: <code>{this.props.match.url}</code></h3>*/}
+
        </div>
-      
+
       <div className="midbody">
 
-       <h2>Featured Products</h2>
-       <p>Check out some of our favorite listings</p>
+       <h2 className="titulo">Seating Products</h2>
+       <p className="titulo1">Check out some of our favorite listings</p>
     <div className="forniList">
       {this._renFeatCards(this.state.furniList) }
     </div>
 
     </div>
+    <div className="downbody">
+    <img src={logoImg} alt=""/>
+    </div>
+    <Footer />
     </section>
    );
  }

@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import request from 'superagent';
 import ProductId from './ProductId';
 //import { Headers } from '../data/datasource';
-//import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-//import DownBody from './DownBody';
+//import AP from './All-Products';
 
 
-class MidBody extends Component {
+class UpBody extends Component {
   constructor(args){
     super(args)
 
@@ -59,7 +59,7 @@ class MidBody extends Component {
            />
       })
 
-      let featCompLis = featCompList.slice(0,6)
+      let featCompLis = featCompList.slice(0,9)
 
       return featCompLis
    }
@@ -67,21 +67,25 @@ class MidBody extends Component {
  render(){
 
    return (
-     <div className="midbody">
+     <section>
+      <div className="midbody">
 
-      <h2>Featured Products</h2>
-      <p>Check out some of our favorite listings</p>
+      <h2 className="titulo">Featured Products</h2>
+      <p className="titulo1">Check out some of our favorite listings</p>
 
       {/*<h3>in route: <code>{this.props.match.url}</code></h3>*/}
 
-    <div className="forniList">
-      {this._renFeatCards(this.state.furniList) }
-    </div>
-
-    </div>
+      <div className="forniList">
+        {this._renFeatCards(this.state.furniList) }
+      </div>
+      </div>
+      <div className="headers-list__red">
+        <Link to="/All-Products">All Products</Link>
+      </div>
+    </section>
    );
  }
 }
 
 
-export default MidBody;
+export default UpBody;

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import request from 'superagent'
 import ProductId from './ProductId.js'
 import Footer from './Footer';
+import { Link } from 'react-router-dom';
 
 class All_Products extends Component {
   constructor(args){
@@ -66,16 +67,18 @@ class All_Products extends Component {
     return (
       <section>
       <div className="all-products">
-        <h2>All Products</h2>
-        <h4>All available listings</h4>
-
-        <h3>in route: <code>{this.props.match.url}</code></h3>
-
+        <h2 className="titulo">All Products</h2>
+        <h4 className="titulo1">All available listings</h4>
+      </div>
+      <div className="item2">
+        <p><Link className="headers-list__red" to="/All-Products">All Items</Link>
+        <Link className="headers-list__red" to="/All-Products">On Sale</Link></p>
+        <p>Items Showing</p>
+      </div>
         <div className="forniList">
           {this._renderCards(this.state.furniList)}
         </div>
 
-      </div>
       <Footer />
       </section>
     );
