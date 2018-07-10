@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-//import logo from './logo.svg';
+
 import './App.css';
-//import './css/styles.css';
 import { Route, Switch } from 'react-router-dom';
+//import { createPubSub, PubSubProvider } from 'react-pubsub';
 import Header from './components/Header';
 
 import HomePage from './components/HomePage';
@@ -13,7 +13,7 @@ import NoMatch404 from './components/NoMatch404';
 
 //import ProductId from './components/ProductId';
 import MidBody from './components/MidBody'
-//import DownBody from './components/DownBody'
+//import pubSub from './utils/pubsub';
 import { headers } from './data/datasource.js'
 
 class App extends Component {

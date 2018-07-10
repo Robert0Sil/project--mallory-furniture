@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import request from 'superagent';
 import ProductId from './ProductId';
 //import { Headers } from '../data/datasource';
-//import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import logoImg from '../images/mf-logo-black.svg'
 import Footer from './Footer';
 
@@ -58,7 +58,7 @@ class MidBody extends Component {
 
    componentWillReceiveProps(newProps){
 
-    //this._fetchFurnitureData(newProps)
+    this._fetchFurniData(newProps)
    }
 
    _renFeatCards(furniDataList){
@@ -114,10 +114,14 @@ class MidBody extends Component {
 
        <h2 className="titulo">Seating Products</h2>
        <p className="titulo1">Check out some of our favorite listings</p>
+       </div>
+       <div className="item2">
+         <p><Link className="headers-list__red" to="/All-Products">All Items</Link>
+         <Link className="headers-list__red" to="/All-Products">On Sale</Link></p>
+         <p>Items Showing</p>
+       </div>
     <div className="forniList">
       {this._renFeatCards(this.state.furniList) }
-    </div>
-
     </div>
     <div className="downbody">
     <img src={logoImg} alt=""/>
