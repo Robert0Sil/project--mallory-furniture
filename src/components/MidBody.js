@@ -32,7 +32,7 @@ class MidBody extends Component {
         D: 'desks',
         St: 'storage',
         B: 'bedroom',
-        M: 'misc'
+        M: 'miscellaneous'
       }
       apiReqUrl = `https://mallory-furniture-admin.now.sh/api/v1/products?category=${genObj[genderInRoute]}`
     }
@@ -63,19 +63,19 @@ class MidBody extends Component {
 
    _renFeatCards(furniDataList){
      let filFeatList = this.state.furniList.filter(function(cardObj){
-       if(cardObj.featured === true){
+       if(cardObj.category === "seating"){
          return true
-       } if(cardObj.seating === true){
+       }else if(cardObj.category === "tables"){
           return true
-       } if(cardObj.tables === true){
+       }else if(cardObj.category === "desks"){
            return true
-       } if(cardObj.desks === true){
+       }else if(cardObj.category === "storage"){
             return true
-       } if(cardObj.storage === true){
+       }else if(cardObj.category === "bedroom"){
              return true
-       } if(cardObj.bedroom === true){
+       }else if(cardObj.category === "miscellaneous"){
               return true
-       } if(cardObj.misc === true){
+       }else if(cardObj.onsale === true){
           return true
        } else {
          return false
@@ -91,10 +91,7 @@ class MidBody extends Component {
            key={i}
            />
       })
-
-      {/*let featCompLis = featCompList.slice(0,9)*/}
-
-      return featCompList
+    return featCompList
    }
 
 
@@ -112,13 +109,13 @@ class MidBody extends Component {
 
       <div className="midbody">
 
-       <h2 className="titulo">Seating Products</h2>
+       <h2 className="titulo">{this.state.furniList.category} Products</h2>
        <p className="titulo1">Check out some of our favorite listings</p>
        </div>
        <div className="item2">
          <p><Link className="headers-list__red" to="/All-Products">All Items</Link>
          <Link className="headers-list__red" to="/All-Products">On Sale</Link></p>
-         <p>Items Showing</p>
+         <p>  Items Showing</p>
        </div>
     <div className="forniList">
       {this._renFeatCards(this.state.furniList) }

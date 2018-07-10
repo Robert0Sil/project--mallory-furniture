@@ -21,7 +21,7 @@ class DownBody extends Component {
           <Link className="headers-blue" to="/gender/M">Misc</Link></p>
 
         </div>
-        <div className="downbody">
+        <div className="downbody-img">
         <img src={logoImg} alt=""/>
         </div>
       </section>

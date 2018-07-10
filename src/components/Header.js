@@ -151,7 +151,7 @@ class Header extends Component {
           <Link className="headers-list__blue" to="/gender/M">{this._genHeaderJsxI()}</Link>
           <span className="headers-list__single"> | </span>
 
-          <Link to="#"><i className="ion-ios-cart-outline"></i></Link>
+          <Link className="navbar" to="#"><i className="ion-ios-cart-outline"></i></Link>
         </div>
 
       </section>

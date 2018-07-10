@@ -78,6 +78,28 @@
        margin: 5px 5px 5px 0px;
 
      }
+     .dinamic-navbar a {
+     padding: 15px;
+     color: #2196F3;
+     text-decoration: none;
+     margin-left: 13px;
+   }
+
+   .static-navbar a{
+     color: #ffffff;
+     text-decoration: none;
+     padding: 15px;
+     margin-left: 13px;
+   }
+
+   .navbar{
+     background-color: #FFC107;
+     color: #000000;
+     font-size: 35px;
+     padding: 15px;
+     margin-left: 10px
+   }
+
 .midbody{
   text-align: left;
 }
@@ -174,6 +196,11 @@
 .product-id p{
   color: #999999;
   font-weight: bold;
+}
+
+.downbody-img {
+  width: 100%;
+  height: 100%
 }
 
 .item {

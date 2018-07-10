@@ -1,7 +1,17 @@
 import React, {Component} from 'react';
+import request from 'superagent';
+import ProductId from './ProductId';
+//import { Headers } from '../data/datasource';
 import { Link } from 'react-router-dom';
 
-class ProductId extends Component {
+class Single extends Component {
+  constructor(args){
+    super(args)
+
+    this.state = {
+      furniList: []
+    }
+  }
 
     render(){
       return(
@@ -18,4 +28,4 @@ class ProductId extends Component {
   }
 }
 
-export default ProductId
+export default Single
