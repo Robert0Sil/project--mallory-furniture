@@ -218,7 +218,14 @@
 
 .item2 {
   text-align: right;
+  font-size: 25px;
 }
+
+  .item-num {
+    font-size: 35px;
+    padding: 15px;
+    color: #FFC107;
+  }
 
 .btn-cat-link{
   border: dodgerblue 1px solid;

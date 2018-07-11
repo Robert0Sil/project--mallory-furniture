@@ -88,6 +88,7 @@ class MidBody extends Component {
            imgUrl={cardObj.imageLink}
            name={cardObj.item}
            price={cardObj.price}
+           cat={cardObj.category}
            key={i}
            />
       })
@@ -109,13 +110,13 @@ class MidBody extends Component {
 
       <div className="midbody">
 
-       <h2 className="titulo">{this.state.furniList.category} Products</h2>
+       <h2 className="titulo">{this.props.category} Products</h2>
        <p className="titulo1">Check out some of our favorite listings</p>
        </div>
        <div className="item2">
          <p><Link className="headers-list__red" to="/All-Products">All Items</Link>
          <Link className="headers-list__red" to="/All-Products">On Sale</Link></p>
-         <p>  Items Showing</p>
+         <p><span className="item-num">{this.state.furniList.length}</span>  Items Showing</p>
        </div>
     <div className="forniList">
       {this._renFeatCards(this.state.furniList) }

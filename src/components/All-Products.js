@@ -73,7 +73,7 @@ class All_Products extends Component {
       <div className="item2">
         <p><Link className="headers-list__red" to="/All-Products">All Items</Link>
         <Link className="headers-list__red" to="/All-Products">On Sale</Link></p>
-        <p>Items Showing</p>
+        <p><span className="item-num">{this.state.furniList.length}</span>  Items Showing</p>
       </div>
         <div className="forniList">
           {this._renderCards(this.state.furniList)}
