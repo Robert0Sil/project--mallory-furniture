@@ -75,7 +75,7 @@ class Single extends Component {
 
       <div className="forniList">
         {/*{this._renSinCards(this.state.furniList) }*/}
-        <p>Mensaje de Prueba</p>
+        <h1>En Construcción</h1>
         {this.props.imgUrl}
       </div>
 
