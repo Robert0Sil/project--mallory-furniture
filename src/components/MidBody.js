@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import request from 'superagent';
 import ProductId from './ProductId';
-//import { Headers } from '../data/datasource';
+import { headers } from '../data/datasource.js';
 import { Link } from 'react-router-dom';
 import logoImg from '../images/mf-logo-black.svg'
 import Footer from './Footer';
+import Splash from './Splash';
 
 
 class MidBody extends Component {
@@ -37,14 +38,11 @@ class MidBody extends Component {
       apiReqUrl = `https://mallory-furniture-admin.now.sh/api/v1/products?category=${genObj[genderInRoute]}`
     }
 
-
-    console.log(apiReqUrl);
-
     request
       .get(apiReqUrl)
       .then((serRes)=>{
         const serResJson = serRes.body
-        console.log(serResJson)
+        //console.log(serResJson)
 
         this.setState({
           furniList : serResJson
@@ -89,8 +87,10 @@ class MidBody extends Component {
            name={cardObj.item}
            price={cardObj.price}
            cat={cardObj.category}
+           id={cardObj._id}
            key={i}
            />
+
       })
     return featCompList
    }
@@ -101,30 +101,20 @@ class MidBody extends Component {
    return (
      <section>
 
-        <div className="storage-img">
-          <p className="titulo2">Mallory Furniture</p>
-          <h2>Your Furniture is Old</h2>
-          <h2>Ours is Older</h2>
+       <Splash />
 
-       </div>
-
-      <div className="midbody">
-
-       <h2 className="titulo">{this.props.category} Products</h2>
-       <p className="titulo1">Check out some of our favorite listings</p>
-       </div>
        <div className="item2">
          <p><Link className="headers-list__red" to="/All-Products">All Items</Link>
          <Link className="headers-list__red" to="/All-Products">On Sale</Link></p>
          <p><span className="item-num">{this.state.furniList.length}</span>  Items Showing</p>
        </div>
     <div className="forniList">
-      {this._renFeatCards(this.state.furniList) }
+        {this._renFeatCards(this.state.furniList)}
     </div>
     <div className="downbody">
     <img src={logoImg} alt=""/>
     </div>
-    <Footer />
+    <Footer footer = {headers}/>
     </section>
    );
  }

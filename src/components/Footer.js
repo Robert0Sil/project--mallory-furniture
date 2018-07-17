@@ -3,8 +3,20 @@ import {Link} from 'react-router-dom'
 //import FootImg from '../images/mf-logo-black.svg'
 
 class Footer extends Component {
+  _genFootJsx(){
+
+    const footArry = this.props.footer.map(function(footStr, index){
+      //console.log(footStr);
+      return <span key={index}>{footStr}</span>
+    })
+    //console.log(dowboArry);
+
+    return footArry
+  }
+
   render(){
     return(
+      <section>
         <div className="footer">
           {/*<img src={FootImg}/>*/}
           <div className="company-footer">
@@ -15,9 +27,9 @@ class Footer extends Component {
 
           <div className="categories-footer">
             <h3>Category</h3>
-              <Link to="/category/seating">Seating</Link>
-              <Link to="/category/tables">Tables</Link>
-              <Link to="/category/miscellaneous">Misc</Link>
+              <Link to="/gender/S">{this._genFootJsx()[4]}</Link>
+              <Link to="/gender/T">{this._genFootJsx()[5]}</Link>
+              <Link to="/gender/M">{this._genFootJsx()[9]}</Link>
           </div>
 
           <div className="social-footer">
@@ -27,6 +39,7 @@ class Footer extends Component {
               <Link to="#"> <i className="ion-social-pinterest-outline"></i> </Link>
           </div>
         </div>
+      </section>
     );
   }
 }

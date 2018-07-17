@@ -103,7 +103,7 @@
 .midbody{
   text-align: left;
 }
-.splash-img{
+.Featured-img{
   background: url(./images/landing-splash-bg.png) no-repeat center center fixed;
   background-size: cover;
   margin: 0;
@@ -111,7 +111,7 @@
   color: white;
 }
 
-.seating-img{
+.Seating-img{
   background: url(./images/category-seating.png) no-repeat center center fixed;
   background-size: cover;
   margin: 0;
@@ -119,7 +119,7 @@
   color: white;
 }
 
-.tables-img{
+.Tables-img{
   background: url(./images/category-tables.png) no-repeat center center fixed;
   background-size: cover;
   margin: 0;
@@ -127,7 +127,7 @@
   color: white;
 }
 
-.desks-img{
+.Desks-img{
   background: url(./images/category-desks.png) no-repeat center center fixed;
   background-size: cover;
   margin: 0;
@@ -135,7 +135,7 @@
   color: white;
 }
 
-.storage-img{
+.Storage-img{
   background: url(./images/category-storage.png) no-repeat center center fixed;
   background-size: cover;
   margin: 0;
@@ -171,6 +171,11 @@
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 10px;
+  text-decoration: none;
+}
+
+.hidden{
+  display: none;
 }
 
 .product-id {
@@ -285,3 +290,6 @@
   font-size: 20px;
   color: #000000;
 }
+
+.buylist--hidden {
+  display: none; }

@@ -4,21 +4,38 @@ import request from 'superagent';
 class Splash extends Component {
   constructor(args){
     super(args)
-    this.state = {furni: 'Featured'}
+    this.state = {furni: ''}
   }
 
-  _hanProClick(clickedType){
-    let cli = clickedType
-    request
-      .get(cli)
-      .then((serRes)=>{
-        const serResJson = serRes.body
-        console.log(serResJson)
-        this.setState({
-            furni: serResJson
-        })
+  _fetchsplaData(compoProps){
+    let img='Featured'
+    let productInRoute = compoProps.match.params.ProId
+    if(typeof productInRoute !== 'undefined'){
+      const genObj = {
+        S: 'Seating',
+        T: 'Tables',
+        D: 'Desks',
+        St: 'Storage',
+        B: 'Bedroom',
+        M: 'Miscellaneous'
+      }
+      img = `${genObj[productInRoute]} `
+    }
+
+      this.setState({
+        furni : img
       })
-  }
+   }
+
+   componentWillMount(){
+    this._fetchsplaData(this.props)
+   }
+
+   componentWillReceiveProps(newProps){
+
+    this._fetchsplaData(newProps)
+   }
+
 
 
   render() {
