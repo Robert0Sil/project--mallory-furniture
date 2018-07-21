@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import request from 'superagent';
+//import request from 'superagent';
 
 class Splash extends Component {
   constructor(args){
@@ -7,17 +7,26 @@ class Splash extends Component {
     this.state = {furni: 'Featured'}
   }
 
-  _hanProClick(clickedType){
-    let cli = clickedType
-    request
-      .get(cli)
-      .then((serRes)=>{
-        const serResJson = serRes.body
-        console.log(serResJson)
-        this.setState({
-            furni: serResJson
-        })
-      })
+  _fetchFurniData(comPro){
+    let genInR = comPro.match.params.ProId
+    console.log(genInR);
+    if(genInR === 'S'){
+      this.setState({ furni: 'Seating'})
+    }else if(genInR === 'T'){
+      this.setState({ furni: 'Tables'})
+    }else if(genInR === 'D'){
+      this.setState({ furni: 'Desks'})
+    }else if(genInR === 'St'){
+      this.setState({ furni: 'Storage'})
+    }else if(genInR === 'B'){
+      this.setState({ furni: 'Bedroom'})
+    }else if(genInR === 'M'){
+      this.setState({ furni: 'Miscellaneous'})
+    }else {
+      this.setState({ furni: 'Featured'})
+    }
+    console.log(genInR);
+    return genInR
   }
 
 

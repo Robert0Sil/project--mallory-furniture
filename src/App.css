@@ -187,6 +187,7 @@
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 5px;
+  text-decoration: none;
 }
 
 .product-id img{
@@ -196,13 +197,18 @@
 .product-id h3{
   font-size: 17px;
   width: 100%;
+  text-decoration: none;
 }
 
 .product-id p{
   color: #999999;
   font-weight: bold;
+  text-decoration: none;
 }
 
+.product-text{
+  text-decoration: none;
+}
 .downbody-img {
   width: 100%;
   height: 100%
@@ -226,11 +232,24 @@
   font-size: 25px;
 }
 
+.item3 {
+  text-align: center;
+  font-size: 25px;
+}
+.item4 {
+  text-align: left;
+  font-size: 20px;
+}
   .item-num {
     font-size: 35px;
     padding: 15px;
     color: #FFC107;
   }
+.single-img{
+    width:35%;
+    text-align: left;
+
+}
 
 .btn-cat-link{
   border: dodgerblue 1px solid;

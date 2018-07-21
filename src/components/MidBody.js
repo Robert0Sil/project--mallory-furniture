@@ -13,7 +13,8 @@ class MidBody extends Component {
     super(args)
 
     this.state = {
-      furniList: []
+      furniList: [],
+      visibleFurniture : 'Sale'
     }
   }
 
@@ -60,21 +61,53 @@ class MidBody extends Component {
    }
 
    _renFeatCards(furniDataList){
+     let visiPro = this.state.visibleFurniture;
+     // visiPro = this.props.;
+     console.log(visiPro);
      let filFeatList = this.state.furniList.filter(function(cardObj){
        if(cardObj.category === "seating"){
-         return true
-       }else if(cardObj.category === "tables"){
-          return true
-       }else if(cardObj.category === "desks"){
+         if(visiPro === 'All'){
            return true
+         }
+         if(cardObj.onSale === true){
+           return true
+         }
+
+       }else if(cardObj.category === "tables"){
+         if(visiPro === 'All'){
+           return true
+         }
+         if(cardObj.onSale === true){
+           return true
+         }
+       }else if(cardObj.category === "desks"){
+         if(visiPro === 'All'){
+           return true
+         }
+         if(cardObj.onSale === true){
+           return true
+         }
        }else if(cardObj.category === "storage"){
-            return true
+         if(visiPro === 'All'){
+           return true
+         }
+         if(cardObj.onSale === true){
+           return true
+         }
        }else if(cardObj.category === "bedroom"){
-             return true
+         if(visiPro === 'All'){
+           return true
+         }
+         if(cardObj.onSale === true){
+           return true
+         }
        }else if(cardObj.category === "miscellaneous"){
-              return true
-       }else if(cardObj.onsale === true){
-          return true
+         if(visiPro === 'All'){
+           return true
+         }
+         if(cardObj.onSale === true){
+           return true
+         }
        } else {
          return false
        }
@@ -94,7 +127,11 @@ class MidBody extends Component {
       })
     return featCompList
    }
-
+   _hanProClick(clickedVal){
+     this.setState({
+       visibleFurniture : clickedVal
+     })
+   }
 
  render(){
 
@@ -104,9 +141,11 @@ class MidBody extends Component {
        <Splash />
 
        <div className="item2">
-         <p><Link className="headers-list__red" to="/All-Products">All Items</Link>
-         <Link className="headers-list__red" to="/All-Products">On Sale</Link></p>
-         <p><span className="item-num">{this.state.furniList.length}</span>  Items Showing</p>
+       <p>
+       <span data-ptype="All" onClick={ ()=>{ this._hanProClick('All')}}><Link className="headers-list__red" to="#">All Items</Link></span>
+       <span data-ptype="onSale" onClick={ ()=>{ this._hanProClick('Sale')}}><Link className="headers-list__red" to="#">On Sale</Link></span>
+       </p>
+         <p><span className="item-num">{this._renFeatCards(this.state.furniList).length}</span>  Items Showing</p>
        </div>
     <div className="forniList">
         {this._renFeatCards(this.state.furniList)}

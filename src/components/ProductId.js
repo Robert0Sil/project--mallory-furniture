@@ -8,7 +8,7 @@ class ProductId extends Component {
     render(){
       return(
         <div className="product-id">
-          <Link to={`/product/${this.props.id}`}>
+          <Link className="furniList" to={`/product/${this.props.id}`}>
           <img src={this.props.imgUrl} alt=""/>
             <div className="product-text">
               <h3>{this.props.name}</h3>
