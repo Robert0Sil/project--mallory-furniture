@@ -9,24 +9,44 @@ class Splash extends Component {
 
   _fetchFurniData(comPro){
     let genInR = comPro.match.params.ProId
+    let tit = 'Featured'
     console.log(genInR);
-    if(genInR === 'S'){
+
+    if(typeof genInR !== 'undefined'){
+      const genObj = {
+        S: 'seating',
+        T: 'tables',
+        D: 'desks',
+        St: 'storage',
+        B: 'bedroom',
+        M: 'miscellaneous'
+      }
+      tit = `${genObj[genInR]}`
+      this.setState({ furni : tit })
+    }
+  }
+    _returnProductCardJsx(splashData){
+      let visiPro = this.state.furni
+      // visiPro = this.props.;
+      console.log(visiPro);
+
+    if(visiPro === 'seating'){
       this.setState({ furni: 'Seating'})
-    }else if(genInR === 'T'){
+    }else if(visiPro === 'tables'){
       this.setState({ furni: 'Tables'})
-    }else if(genInR === 'D'){
+    }else if(visiPro === 'desks'){
       this.setState({ furni: 'Desks'})
-    }else if(genInR === 'St'){
+    }else if(visiPro === 'storage'){
       this.setState({ furni: 'Storage'})
-    }else if(genInR === 'B'){
+    }else if(visiPro === 'bedroom'){
       this.setState({ furni: 'Bedroom'})
-    }else if(genInR === 'M'){
+    }else if(visiPro === 'miscellaneous'){
       this.setState({ furni: 'Miscellaneous'})
     }else {
       this.setState({ furni: 'Featured'})
     }
-    console.log(genInR);
-    return genInR
+    console.log(visiPro);
+    return visiPro
   }
 
 

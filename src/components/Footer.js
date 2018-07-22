@@ -21,8 +21,8 @@ class Footer extends Component {
           {/*<img src={FootImg}/>*/}
           <div className="company-footer">
             <h3>Company</h3>
-              <Link to="/about">About</Link>
-              <Link to="/Terms+Conditions">Terms + Conditions</Link>
+              <Link to="/about">{this._genFootJsx()[0]}</Link>
+              <Link to="/Terms+Conditions">{this._genFootJsx()[1]}</Link>
           </div>
 
           <div className="categories-footer">

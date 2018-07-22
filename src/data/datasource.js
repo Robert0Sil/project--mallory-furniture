@@ -4,7 +4,7 @@ export const headers = [
   '|',
   'All',
   'Seating',
-  'Tablet',
+  'Tables',
   'Desks',
   'Storage',
   'Bedroom',

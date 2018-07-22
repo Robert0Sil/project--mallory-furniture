@@ -65,6 +65,20 @@
       margin: 20px 60px 20px 60px;
 
     }
+
+    .headers-blue2 {
+       display: inline-block;
+       vertical-align: center;
+       text-decoration: none;
+       color: #2196f3;
+       border-color: #2196f3;
+       border-style:solid;
+       border-width: thin;
+       padding: 0px 17px;
+       /*background: #fff;*/
+       margin: 0px 18px 0px 18px;
+
+     }
     .headers-list__red {
        display: inline-block;
        vertical-align: center;
@@ -78,6 +92,21 @@
        margin: 5px 5px 5px 0px;
 
      }
+
+     .headers-list__gri {
+        display: inline-block;
+        vertical-align: center;
+        text-decoration: none;
+        color: #999;
+        border-color: #999;
+        border-style:solid;
+        border-width: thin;
+        padding: 10px 45px;
+        /*background: #fff;*/
+        margin: 5px 5px 5px 0px;
+
+      }
+
      .dinamic-navbar a {
      padding: 15px;
      color: #2196F3;
@@ -174,6 +203,26 @@
   text-decoration: none;
 }
 
+.forniList2 {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.forniList3 {
+  width: 30%;
+  border-color: #999999;
+  border-style:solid;
+  border-width: thin;
+  padding: 10px;
+  display: block;
+  flex-wrap: wrap;
+  margin-bottom: 5px;
+  text-decoration: none;
+}
+
 .hidden{
   display: none;
 }
@@ -207,6 +256,9 @@
 }
 
 .product-text{
+  font-size: 17px;
+  width: 100%;
+
   text-decoration: none;
 }
 .downbody-img {
@@ -238,7 +290,7 @@
 }
 .item4 {
   text-align: left;
-  font-size: 20px;
+  font-size: 25px;
 }
   .item-num {
     font-size: 35px;

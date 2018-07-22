@@ -14,7 +14,9 @@ class MidBody extends Component {
 
     this.state = {
       furniList: [],
-      visibleFurniture : 'Sale'
+      visibleFurniture : 'Sale',
+      colSale : 'red',
+      colAll : 'gri'
     }
   }
 
@@ -63,7 +65,7 @@ class MidBody extends Component {
    _renFeatCards(furniDataList){
      let visiPro = this.state.visibleFurniture;
      // visiPro = this.props.;
-     console.log(visiPro);
+     //console.log(visiPro);
      let filFeatList = this.state.furniList.filter(function(cardObj){
        if(cardObj.category === "seating"){
          if(visiPro === 'All'){
@@ -131,6 +133,16 @@ class MidBody extends Component {
      this.setState({
        visibleFurniture : clickedVal
      })
+     let visiPro = this.state.visibleFurniture;
+     let colA = 'gri';
+     let colS = 'red';
+     if(visiPro === 'Sale'){
+       this.setState ({colAll : colS})
+       this.setState ({colSale : colA})
+     }else {
+       this.setState ({colAll : colA})
+       this.setState ({colSale : colS})
+     }
    }
 
  render(){
@@ -142,8 +154,8 @@ class MidBody extends Component {
 
        <div className="item2">
        <p>
-       <span data-ptype="All" onClick={ ()=>{ this._hanProClick('All')}}><Link className="headers-list__red" to="#">All Items</Link></span>
-       <span data-ptype="onSale" onClick={ ()=>{ this._hanProClick('Sale')}}><Link className="headers-list__red" to="#">On Sale</Link></span>
+       <span data-ptype="All" onClick={ ()=>{ this._hanProClick('All')}}><Link className={`headers-list__${this.state.colAll}`} to="#">All Items</Link></span>
+       <span data-ptype="onSale" onClick={ ()=>{ this._hanProClick('Sale')}}><Link className={`headers-list__${this.state.colSale}`} to="#">On Sale</Link></span>
        </p>
          <p><span className="item-num">{this._renFeatCards(this.state.furniList).length}</span>  Items Showing</p>
        </div>

@@ -53,7 +53,10 @@ class Single extends Component {
         imgUrl={cardObj.imageLink}
         name={cardObj.item}
         price={cardObj.price}
-        cat={cardObj.category}
+        cat={cardObj.condition}
+        W={cardObj.width}
+        L={cardObj.length}
+        H={cardObj.height}
         id={cardObj._id}
         key={i}
          />
@@ -66,20 +69,28 @@ class Single extends Component {
  render(){
 
    return (
-     <section>
+     <section className="forniList2">
       <div className="item2">
 
-      </div>
-      <div className="item4">
         <img src={this.state.furnObj.imageLink} alt=""/>
       </div>
-      <div className="item2">
-        <h1 >Titulo:  {this.state.furnObj.item}</h1>
-        <h2 >Categoría:  {this.state.furnObj.category}</h2>
-        <h2 >Precio:  {this.state.furnObj.price}</h2>
+      <div className="forniList3">
+        <h1 className="titulo1">{this.state.furnObj.item}</h1>
+        <h3 className="item2">${this.state.furnObj.price}</h3>
+
+      <div className="downbody">
+        <p><span className="headers-blue2" >Condition</span>
+        <span className="headers-blue2" >Measurements</span>
+        <span className="headers-blue2" >Add to cart</span></p>
+        <p><span className="headers-blue2">{this.state.furnObj.condition}</span>
+        <span className="headers-blue2" >W:{this.state.furnObj.width}  H:{this.state.furnObj.height}  L:{this.state.furnObj.length}</span>
+        <span className="headers-blue2" >Add to cart</span></p>
+      </div>
+
+        <p >{this.state.furnObj.category}</p>
       </div>
       <div className="item3">
-        
+
 
 
       </div>

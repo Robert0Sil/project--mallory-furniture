@@ -11,7 +11,9 @@ class All_Products extends Component {
     super(args)
     this.state = {
         furniList : [],
-        visibleFurniture : 'Sale'
+        visibleFurniture : 'Sale',
+        colSale : 'red',
+        colAll : 'gri'
       }
 
   }
@@ -37,7 +39,7 @@ class All_Products extends Component {
     _returnProductCardJsx(entireFurnitureList){
       let visiPro = this.state.visibleFurniture;
       // visiPro = this.props.;
-      console.log(visiPro);
+      //console.log(visiPro);
 
       let filFeatList = entireFurnitureList.filter(function(cardObj){
         if(visiPro === 'All'){
@@ -70,6 +72,16 @@ class All_Products extends Component {
       this.setState({
         visibleFurniture : clickedVal
       })
+      let visiPro = this.state.visibleFurniture;
+      let colA = 'gri';
+      let colS = 'red';
+      if(visiPro === 'Sale'){
+        this.setState ({colAll : colS})
+        this.setState ({colSale : colA})
+      }else {
+        this.setState ({colAll : colA})
+        this.setState ({colSale : colS})
+      }
     }
 
   render(){
@@ -82,8 +94,8 @@ class All_Products extends Component {
       </div>
       <div className="item2">
         <p>
-        <span data-ptype="All" onClick={ ()=>{ this._hanProClick('All')}}><Link className="headers-list__red" to="#">All Items</Link></span>
-        <span data-ptype="onSale" onClick={ ()=>{ this._hanProClick('Sale')}}><Link className="headers-list__red" to="#">On Sale</Link></span>
+        <span data-ptype="All" onClick={ ()=>{ this._hanProClick('All')}}><Link className={`headers-list__${this.state.colAll}`} to="#">All Items</Link></span>
+        <span data-ptype="onSale" onClick={ ()=>{ this._hanProClick('Sale')}}><Link className={`headers-list__${this.state.colSale}`} to="#">On Sale</Link></span>
         </p>
         <p><span className="item-num">{this._returnProductCardJsx(this.state.furniList).length}</span>  Items Showing</p>
       </div>
