@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import logoImg from '../images/mf-logo-black.svg'
 import { Link } from 'react-router-dom';
-//import { headers } from '../data/datasource';
 
 class DownBody extends Component {
 
@@ -12,10 +11,9 @@ class DownBody extends Component {
       return <span key={index}>{dowbo}</span>
     })
     //console.log(dowboArry);
-
     return dowboArry
-
   }
+
   render() {
     return(
       <section>
@@ -32,7 +30,6 @@ class DownBody extends Component {
           <Link className="headers-blue" to="/gender/D">{this._genDoBoJsx()[6]}</Link>
           <Link className="headers-blue" to="/gender/St">{this._genDoBoJsx()[7]}</Link></p>
           <p><Link className="headers-blue" to="/gender/B">{this._genDoBoJsx()[8]}</Link>
-          {/*<Link className="headers-blue" to="/gender/M">{this._genDoBoJsx()[9]}</Link></p>*/}
           <Link className="headers-blue" to="/gender/M">{this._genDoBoJsx()[9]}</Link></p>
         </div>
         <div className="downbody-img">
@@ -41,6 +38,7 @@ class DownBody extends Component {
       </section>
     );
   }
+
 }
 
 export default DownBody;

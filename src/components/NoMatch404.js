@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 class NoMatch404 extends Component {
+
   render() {
     return (
       <div className="no-match-page">
@@ -10,6 +11,7 @@ class NoMatch404 extends Component {
       </div>
     );
   }
+
 }
 
 export default NoMatch404;

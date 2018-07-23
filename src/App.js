@@ -2,18 +2,18 @@ import React, { Component } from 'react';
 
 import './App.css';
 import { Route, Switch } from 'react-router-dom';
+import { headers } from './data/datasource.js';
 import Header from './components/Header';
-//import DownBody from './components/DownBody'
 import HomePage from './components/HomePage';
 import AboutPage from './components/About';
 import TC from './components/Terms+Conditions';
 import AP from './components/All-Products';
 import NoMatch404 from './components/NoMatch404';
-//import UpBody from './components/UpBody';
+
 import Single from './components/Single';
 import MidBody from './components/MidBody';
 import Splash from './components/Splash';
-import { headers } from './data/datasource.js';
+
 
 class App extends Component {
   render() {

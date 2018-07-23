@@ -11,15 +11,3 @@ export const headers = [
   'Misc',
   '|'
 ]
-
-export const terms = [
-  'UI Design',
-  'Development',
-  'Documentaton',
-  'Prototyping',
-  'Mentoring',
-  'Design Patterns',
-  'Illustration',
-  'Branding',
-  'SEO',
-]

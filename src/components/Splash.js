@@ -4,56 +4,35 @@ import React, { Component } from 'react';
 class Splash extends Component {
   constructor(args){
     super(args)
-    this.state = {furni: 'Featured'}
-  }
-
-  _fetchFurniData(comPro){
-    let genInR = comPro.match.params.ProId
-    let tit = 'Featured'
-    console.log(genInR);
-
-    if(typeof genInR !== 'undefined'){
-      const genObj = {
-        S: 'seating',
-        T: 'tables',
-        D: 'desks',
-        St: 'storage',
-        B: 'bedroom',
-        M: 'miscellaneous'
+    this.state = {
+        titImg : 'Featured'
       }
-      tit = `${genObj[genInR]}`
-      this.setState({ furni : tit })
-    }
-  }
-    _returnProductCardJsx(splashData){
-      let visiPro = this.state.furni
-      // visiPro = this.props.;
-      console.log(visiPro);
 
-    if(visiPro === 'seating'){
-      this.setState({ furni: 'Seating'})
-    }else if(visiPro === 'tables'){
-      this.setState({ furni: 'Tables'})
-    }else if(visiPro === 'desks'){
-      this.setState({ furni: 'Desks'})
-    }else if(visiPro === 'storage'){
-      this.setState({ furni: 'Storage'})
-    }else if(visiPro === 'bedroom'){
-      this.setState({ furni: 'Bedroom'})
-    }else if(visiPro === 'miscellaneous'){
-      this.setState({ furni: 'Miscellaneous'})
-    }else {
-      this.setState({ furni: 'Featured'})
-    }
-    console.log(visiPro);
-    return visiPro
   }
+  _fetchFurniData(visiTitImg){
+    let genTit = visiTitImg.match.params.ProId
+
+  if(typeof genTit !== 'undefined'){
+    const gen = {
+      S: 'seating',
+      T: 'tables',
+      D: 'desks',
+      St: 'storage',
+      B: 'bedroom',
+      M: 'miscellaneous'
+    }
+    genTit = `${gen[genTit]}`
+  }
+    this.setState({ titImg : genTit })
+    console.log(genTit);
+ }
+
 
 
   render() {
     return (
       <section>
-      <div className={`${this.state.furni}-img`}>
+      <div className={`${this.state.titImg}-img`}>
         {/*<img src={logoImg} Alt="">*/}
 
         <p className="titulo2">Mallory Furniture</p>
@@ -62,7 +41,7 @@ class Splash extends Component {
       </div>
       <div className="midbody">
 
-       <h2 className="titulo">{this.state.furni} Products</h2>
+       <h2 className="titulo">{this.state.titImg} Products</h2>
        <p className="titulo1">Check out some of our favorite listings</p>
        </div>
       </section>

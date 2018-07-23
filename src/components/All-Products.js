@@ -15,7 +15,6 @@ class All_Products extends Component {
         colSale : 'red',
         colAll : 'gri'
       }
-
   }
 
   _fetchFurniData(compProps){
@@ -30,83 +29,83 @@ class All_Products extends Component {
       })
    }
 
-    componentWillMount(){
-     this._fetchFurniData(this.props)
-    }
-    componentWillReceiveProps(newProps){
-    //this._fetchFurnitureData(newProps)
-    }
-    _returnProductCardJsx(entireFurnitureList){
-      let visiPro = this.state.visibleFurniture;
-      // visiPro = this.props.;
-      //console.log(visiPro);
+   componentWillMount(){
+    this._fetchFurniData(this.props)
+   }
+   componentWillReceiveProps(newProps){
+   //this._fetchFurnitureData(newProps)
+   }
 
-      let filFeatList = entireFurnitureList.filter(function(cardObj){
-        if(visiPro === 'All'){
-          return true
-        }
-        if(cardObj.onSale === true){
-          return true
-        } else {
-          return false
-        }
+   _returnProductCardJsx(entireFurnitureList){
+     let visiPro = this.state.visibleFurniture;
+     // visiPro = this.props.;
+     //console.log(visiPro);
+     let filFeatList = entireFurnitureList.filter(function(cardObj){
+       if(visiPro === 'All'){
+         return true
+       }
+       if(cardObj.onSale === true){
+         return true
+       } else {
+         return false
+       }
+     })
+     let forniCompLis = filFeatList.map((cardObj, i)=>{
+       //console.log(this.props.visiPro)
+       return <ProductId
+       imgUrl={cardObj.imageLink}
+       name={cardObj.item}
+       price={cardObj.price}
+       cat={cardObj.category}
+       id={cardObj._id}
+       onsale={cardObj.onSale}
+       key={i}
+         />
+     })
+     return forniCompLis
+   }
 
-      })
-      let forniCompLis = filFeatList.map((cardObj, i)=>{
-        //console.log(this.props.visiPro)
-        return <ProductId
-        imgUrl={cardObj.imageLink}
-        name={cardObj.item}
-        price={cardObj.price}
-        cat={cardObj.category}
-        id={cardObj._id}
-        onsale={cardObj.onSale}
-        key={i}
-          />
-      })
+   _hanProClick(clickedVal){
+     this.setState({
+       visibleFurniture : clickedVal
+     })
+     let visiPro = this.state.visibleFurniture;
+     let colA = 'gri';
+     let colS = 'red';
+     if(visiPro === 'Sale'){
+       this.setState ({colAll : colS})
+       this.setState ({colSale : colA})
+     }else {
+       this.setState ({colAll : colA})
+       this.setState ({colSale : colS})
+     }
+   }
 
-      return forniCompLis
-    }
+   render(){
 
-    _hanProClick(clickedVal){
-      this.setState({
-        visibleFurniture : clickedVal
-      })
-      let visiPro = this.state.visibleFurniture;
-      let colA = 'gri';
-      let colS = 'red';
-      if(visiPro === 'Sale'){
-        this.setState ({colAll : colS})
-        this.setState ({colSale : colA})
-      }else {
-        this.setState ({colAll : colA})
-        this.setState ({colSale : colS})
-      }
-    }
+     return (
+       <section>
+       <div className="app-title">
+         <h2 className="titulo">All Products</h2>
+         <h4 className="titulo1">All available listings</h4>
 
-  render(){
+       <div className="item2">
+         <p>
+         <span data-ptype="All" onClick={ ()=>{ this._hanProClick('All')}}><Link className={`headers-list__${this.state.colAll}`} to="#">All Items</Link></span>
+         <span data-ptype="onSale" onClick={ ()=>{ this._hanProClick('Sale')}}><Link className={`headers-list__${this.state.colSale}`} to="#">On Sale</Link></span>
+         </p>
+         <p><span className="item-num">{this._returnProductCardJsx(this.state.furniList).length}</span>  Items Showing</p>
+       </div>
+       </div>
+         <div className="forniList">
+           {this._returnProductCardJsx(this.state.furniList)}
+         </div>
 
-    return (
-      <section>
-      <div className="all-products">
-        <h2 className="titulo">All Products</h2>
-        <h4 className="titulo1">All available listings</h4>
-      </div>
-      <div className="item2">
-        <p>
-        <span data-ptype="All" onClick={ ()=>{ this._hanProClick('All')}}><Link className={`headers-list__${this.state.colAll}`} to="#">All Items</Link></span>
-        <span data-ptype="onSale" onClick={ ()=>{ this._hanProClick('Sale')}}><Link className={`headers-list__${this.state.colSale}`} to="#">On Sale</Link></span>
-        </p>
-        <p><span className="item-num">{this._returnProductCardJsx(this.state.furniList).length}</span>  Items Showing</p>
-      </div>
-        <div className="forniList">
-          {this._returnProductCardJsx(this.state.furniList)}
-        </div>
+       <Footer footer = {headers}/>
+       </section>
+     );
+   }
 
-      <Footer footer = {headers}/>
-      </section>
-    );
-  }
-}
+ }
 
-export default All_Products
+ export default All_Products;

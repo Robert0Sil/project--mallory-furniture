@@ -1,16 +1,10 @@
 import React, { Component } from 'react';
 import request from 'superagent';
 import ProductId from './ProductId';
-//import Single from './Single';
-//import { Link } from 'react-router-dom';
-
-//import AP from './All-Products';
-
 
 class UpBody extends Component {
   constructor(args){
     super(args)
-
     this.state = {
       furniList: []
     }
@@ -26,7 +20,8 @@ class UpBody extends Component {
        //console.log(serResJson)
 
        this.setState({
-           furniList: serResJson
+           furniList: serResJson,
+           titu: 'Featured'
        })
      })
    }
@@ -36,7 +31,6 @@ class UpBody extends Component {
    }
 
    componentWillReceiveProps(newProps){
-
     //this._fetchFurnitureData(newProps)
    }
 
@@ -47,7 +41,6 @@ class UpBody extends Component {
        } else {
          return false
        }
-
      })
 
       let featCompList = filFeatList.map((cardObj, i)=>{
@@ -60,25 +53,32 @@ class UpBody extends Component {
         key={i}
            />
       })
-
-      let featCompLis = featCompList.slice(0,9)
-
+      let featCompLis = featCompList.slice(3,9)
       return featCompLis
    }
 
- render(){
+   render(){
 
-   return (
-     <section>
-      <div className="forniList">
-        {this._renFeatCards(this.state.furniList) }
-      </div>
+     return (
+       <section>
+       <div className={`${this.state.titu}-img`}>
+         <p className="titulo2">Mallory Furniture</p>
+         <h2>Your Furniture is Old</h2>
+         <h2>Ours is Older</h2>
+       </div>
+       <div className="midbody">
+         <h2 className="titulo">{this.state.titu} Products</h2>
+         <p className="titulo1">Check out some of our favorite listings</p>
+       </div>
+       <div className="forniList">
+          {this._renFeatCards(this.state.furniList) }
+        </div>
 
 
-    </section>
-   );
- }
-}
+      </section>
+     );
+   }
 
+  }
 
-export default UpBody;
+  export default UpBody;

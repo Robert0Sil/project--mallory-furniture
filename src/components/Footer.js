@@ -4,13 +4,11 @@ import {Link} from 'react-router-dom'
 
 class Footer extends Component {
   _genFootJsx(){
-
     const footArry = this.props.footer.map(function(footStr, index){
       //console.log(footStr);
       return <span key={index}>{footStr}</span>
     })
     //console.log(dowboArry);
-
     return footArry
   }
 
@@ -42,6 +40,7 @@ class Footer extends Component {
       </section>
     );
   }
+
 }
 
-export default Footer
+export default Footer;

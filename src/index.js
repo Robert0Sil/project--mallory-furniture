@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-//import pubSub from './utils/pubsub';
-import registerServiceWorker from './registerServiceWorker';
 
+import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter } from 'react-router-dom';
 
 class AppRouter extends Component {

@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-
-//import ProductId from './ProductId';
 import Splash from './Splash';
 import UpBody from './UpBody';
 import DownBody from './DownBody';
@@ -9,11 +7,10 @@ import { headers } from '../data/datasource.js';
 
 class HomePage extends Component {
 
-
   render() {
     return (
       <section>
-        <Splash />
+        {/*<Splash />*/}
 
         <UpBody />
 
