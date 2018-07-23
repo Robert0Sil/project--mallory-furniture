@@ -259,10 +259,18 @@
           display: none;
         }
 
+        .navbar{
+             background-color: #FFC107;
+             color: #000000;
+             font-size: 35px;
+             padding: 15px;
+             margin-left: 10px
+           }
+
           .position{
           	position: relative;
           	bottom: 40px;
-          	right: 15px;
+          	right: 0px;
           }
 
           .product-id {
